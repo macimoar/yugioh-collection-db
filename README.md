@@ -113,3 +113,37 @@ SELECT * FROM upsert_inventory_item(
   1,
   4.50
 );
+```
+## Technologies Used
+
+`PostgreSQL`
+
+`Supabase`
+
+`SQL`
+
+`GitHub`
+
+## Future Development
+
+Planned features include:
+
+• Web interface for searching the collection
+
+• Add cards directly from card database search
+
+• Automatic price updates from card marketplaces
+
+• Deck building support
+
+• Collection value tracking
+
+## Motivation
+
+This project started as a personal spreadsheet to track my card collection. As the dataset grew to thousands of entries across hundreds of sets, it became clear that a relational database would provide much better scalability and data integrity.
+
+This repository represents the redesigned system and serves as a foundation for future applications.
+
+## Author
+
+Brian Ceradsky
