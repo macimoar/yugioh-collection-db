@@ -114,6 +114,17 @@ SELECT * FROM upsert_inventory_item(
   4.50
 );
 ```
+
+## Example Analytics Queries
+
+Example analysis queries are included in the `analytics/` folder, including:
+
+- total collection value
+- rarity distribution
+- most valuable cards
+- set completion statistics
+
+
 ## Technologies Used
 
 `PostgreSQL`
