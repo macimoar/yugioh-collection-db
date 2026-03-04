@@ -170,3 +170,115 @@ Inventory rows are uniquely identified by:
 If a card with identical attributes is added again, the system **increments the quantity instead of creating a duplicate row**.
 
 Example:
+Example:
+
+`+1 JUSH-EN040 1st Edition, Starlight Rare`
+
+`+1 JUSH-EN040 1st Edition, Starlight Rare`
+
+becomes:
+
+quantity = 2
+
+`+1 JUSH-EN040 1st Edition, Starlight Rare`
+
+`+1 JUSH-EN040 1st Edition, Super Rare`
+
+becomes:
+
+seperate entries
+
+
+This logic is implemented using a PostgreSQL **UPSERT function**.
+
+---
+
+# Data Sources
+
+Card catalogue data was imported from: YGOProDeck card database
+
+
+This provides:
+
+- official Konami card IDs
+- card stats
+- card descriptions
+- archetype information
+
+The printings dataset was built from exported card lists and corrected manually for data quality issues such as:
+
+- incorrect rarities
+- missing token cards
+- artwork variants
+
+---
+
+# Special Cases
+
+## Artwork Variants
+
+Some cards share the same card code but have different artwork.
+
+Example:
+`LDK2-ENK01 Blue-Eyes White Dragon`
+
+
+This set includes multiple artworks.
+
+These are stored using: variant_name
+
+
+Example:
+
+| printing_code | variant_name |
+|---------------|--------------|
+| LDK2-ENK01 | Art 1 |
+| LDK2-ENK01 | Art 2 |
+| LDK2-ENK01 | Art 4 |
+
+---
+
+## Short Print Cards
+
+Some cards are listed as: `Short Print` and `Super Short print`
+
+
+These are treated as separate rarities in the database to preserve the original printing information. They are akin to the common rarity
+
+---
+
+# Future Improvements
+
+Planned extensions for the database include:
+
+### Web Interface
+Allow users to:
+
+- search cards
+- add cards to inventory
+- track collection completion
+
+### Pricing Integration
+
+Automatic price updates from:
+
+- TCGPlayer
+- other card market APIs
+
+### Deck Builder
+
+Allow deck creation and validation based on owned cards.
+
+---
+
+# Summary
+
+This schema was designed to:
+
+- eliminate redundant data
+- support hundreds of sets and thousands printings
+- accurately model card rarity and variants
+- allow scalable inventory tracking
+
+The system forms the foundation for a future web-based Yu-Gi-Oh collection manager.
+
