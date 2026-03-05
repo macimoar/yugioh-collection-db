@@ -12,3 +12,6 @@ CREATE INDEX IF NOT EXISTS idx_printings_set_code ON printings(set_code);
 CREATE INDEX IF NOT EXISTS idx_printings_card_id  ON printings(card_id);
 CREATE INDEX IF NOT EXISTS idx_inventory_printing ON inventory(printing_id);
 CREATE INDEX IF NOT EXISTS idx_inventory_location ON inventory(location);
+CREATE INDEX IF NOT EXISTS idx_printings_rarity ON printings(rarity);
+CREATE INDEX IF NOT EXISTS idx_inventory_grade ON inventory(card_grade);
+CREATE INDEX IF NOT EXISTS idx_inventory_edition ON inventory(edition);
