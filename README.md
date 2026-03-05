@@ -135,6 +135,17 @@ Example analysis queries are included in the `analytics/` folder, including:
 
 `GitHub`
 
+## Dashboard Views
+
+A BI-friendly metrics layer is defined in `sql/04_dashboard_views.sql`.
+
+Key views:
+- `v_dashboard_collection_summary`
+- `v_dashboard_value_by_location`
+- `v_dashboard_rarity_distribution`
+- `v_dashboard_top_valuable_items`
+- `v_dashboard_set_completion`
+
 ## Future Development
 
 Planned features include:
